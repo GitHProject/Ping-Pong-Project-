@@ -1,5 +1,3 @@
-from random import randint
-
 from pygame import *
 
 win_width = 700
@@ -12,7 +10,11 @@ game = True
 finish = False
 
 while game:
-    window.blit(background, (0,0))
+    for e in event.get():
+        if e.type == QUIT:
+            game = False
+    if finish == False:
+        window.blit(background, (0,0))
     
     display.update()
     time.delay(50)
